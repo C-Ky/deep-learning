@@ -1,0 +1,24 @@
+Zipf : compte nb d'occurence des mots dans un texte et les classe de manière croissante => rang et relation "lineaire" entre occurence et rang du mot
+
+Loi dyn de Shannon : on va associer à un symbole peut freq un symbole +/- complexe (coûteux à stocker)
+
+alpha et beta diminue => langue est moins normée et il y a plus de manière différente de s'exprimer.
+
+seq2seq dissequé : 
+j ha bite a toulouse envoyer a encoder pour avoir une representation de cette phrase passé ensuite a decoder pour avoir traduction en anglais
+encoder rnn, apres passage de la phrase celle-ci est sauvegardee dans le state qu'on utilise pour initialiser state dans rnn de decoder
+rnn decoder will start by '<' (start sentence token) then predict next word until he predicts une fin de phrase '>'
+pb avec seq2seq: dur de stocker toute info dans un seul vecteur qd on represente une longue phrase (un seul vecteur en entree de l'encodeur
+
+attention decoder: avant de predire le mot suivant on regarde quel.s vecteur.s parmi ceux d'entree est/sont pertinent.s. 
+can also be used for explicability
+
+finalement l'attention might be all you need => gave birth to transformers models (e.g. BERT) without any recurrent layers.
+
+Mais BERT tres gros: (Graal en NLP mais trop lourd donc pas tant utilisé que ça dans industrie)
+768 dim of vectors to represent, 
+12 params min, 
+12 tetes d attention...
+
+BERT et GPT3 "best" in NLP
+mais apprennent des biais (raciaux ...) et tres complexes donc on a du mal a les en empecher (difficile de controler ces modeles)
